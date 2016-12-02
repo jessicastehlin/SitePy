@@ -1,5 +1,5 @@
-# imports csv file from GASF website and prints results
-# run time: approx. 15 minutes
+# imports csv file from GASF website and prints only Hall County data
+# run time: less than 1 minute
 
 import csv
 import urllib
@@ -9,4 +9,7 @@ response = urllib.urlopen(url)
 cr = csv.reader(response) 
 
 for row in cr:
-    print row
+    desiredCounty = 'Hall' # can change desiredCounty as needed
+    county = row[15] # if changing desiredCounty, also change row[#]
+    if county == desiredCounty:
+        print row
