@@ -1,15 +1,14 @@
-# imports csv file from GASF website and prints only Hall County data
-# run time: less than 1 minute
+# module run time: approx. 1 minute
 
 import csv
 import urllib
 
-url = 'http://artiraq.org/static/opencontext/revised-tables/02f748469252f6d14250cb0c0b9d9f1e.csv'
-response = urllib.urlopen(url)
-cr = csv.reader(response) 
+# open GASF file from url and save as csv
+urllib.urlretrieve('http://artiraq.org/static/opencontext/revised-tables/02f748469252f6d14250cb0c0b9d9f1e.csv' , "gasf_sitepy.csv")
 
-for row in cr:
-    desiredCounty = 'Hall' # can change desiredCounty as needed
-    county = row[15] # if changing desiredCounty, also change row[#]
-    if county == desiredCounty:
-        print row
+# filter only Hall County data and print results
+with open('gasf_sitepy.csv', 'rb') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        if row[15] == 'Hall':
+            print row
