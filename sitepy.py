@@ -11,5 +11,5 @@ with open('gasf_sitepy.csv','r') as i, open('gasf_hall.csv','w') as o:
     r = csv.reader(i)
     w = csv.writer(o)
     for row in r:
-        if row[15] == 'Hall':
+        if row[15] == 'Hall' or row[15] == 'Context (3)':
             w.writerow(row)
