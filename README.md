@@ -43,16 +43,23 @@ In many cases, it can be useful to be able to quickly determine the number of ar
 To print the total number of Hall County sites, I would use the code below:
 ```python
 sitepy_reader = csv.reader(open('gasf_sitepy.csv'))
-ctr = 0
+counter = 0
 for record in sitepy_reader:
     if record[15] == 'Hall':
-        ctr += 1
-print 'Number of Hall County sites: %s' %(ctr)
+        counter += 1
+print 'Number of Hall County sites: %s' %(counter)
 ```
 After running the program, the printed result would look like this:
 ```python
 Number of Hall County sites: 581
 ```
+In the final program, I have used the 'counter' function three times, which allows me to print the total number of sites for various counties. This is useful if you want to compare the number of sites in a given category. (The category does not need to be a county; any of the fields in the csv file can be counted using the same method.)
+```python
+Number of Hall County sites: 581
+Number of Gwinnett County sites: 635
+Number of Forsyth County sites: 569
+```
+
 ## References (Links)
 ### Georgia Archaeological Site File (GASF)
 - [Georgia Archaeological Site File (GASF) website homepage](https://archaeology.uga.edu/gasf/home)
