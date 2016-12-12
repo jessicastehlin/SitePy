@@ -25,7 +25,7 @@ with open('gasf_sitepy.csv','r') as i, open('gasf_endangered.csv','w') as o:
         if row[36] == 'Endangered' or row[36] == 'Preservation Prospects':
             w.writerow(row)
 
-# count total number of Hall County sites
+# count number of sites for individual counties, and print results
 
 sitepy_reader = csv.reader(open('gasf_sitepy.csv'))
 counter = 0
@@ -33,3 +33,17 @@ for record in sitepy_reader:
     if record[15] == 'Hall':
         counter += 1
 print 'Number of Hall County sites: %s' %(counter)
+
+sitepy_reader = csv.reader(open('gasf_sitepy.csv'))
+counter = 0
+for record in sitepy_reader:
+    if record[15] == 'Gwinnett':
+        counter += 1
+print 'Number of Gwinnett County sites: %s' %(counter)
+
+sitepy_reader = csv.reader(open('gasf_sitepy.csv'))
+counter = 0
+for record in sitepy_reader:
+    if record[15] == 'Forsyth':
+        counter += 1
+print 'Number of Forsyth County sites: %s' %(counter)
