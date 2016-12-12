@@ -32,4 +32,4 @@ ctr = 0
 for record in my_reader:
     if record[15] == 'Hall':
         ctr += 1
-print(ctr)
+print 'Number of Hall County sites: %s' %(ctr)
