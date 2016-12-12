@@ -27,9 +27,9 @@ with open('gasf_sitepy.csv','r') as i, open('gasf_endangered.csv','w') as o:
 
 # count total number of Hall County sites
 
-my_reader = csv.reader(open('gasf_sitepy.csv'))
-ctr = 0
-for record in my_reader:
+sitepy_reader = csv.reader(open('gasf_sitepy.csv'))
+counter = 0
+for record in sitepy_reader:
     if record[15] == 'Hall':
-        ctr += 1
-print 'Number of Hall County sites: %s' %(ctr)
+        counter += 1
+print 'Number of Hall County sites: %s' %(counter)
